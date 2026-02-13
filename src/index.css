@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-research-gray-800;
+  }
+
+  body {
+    @apply bg-research-bg text-research-gray-100 font-sans antialiased;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient-purple-pink {
+    @apply bg-gradient-to-r from-research-purple to-research-pink bg-clip-text text-transparent;
+  }
+
+  .card-glow {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+  }
+
+  .card-glow-pink {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.1);
+  }
+}

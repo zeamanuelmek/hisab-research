@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "hisab-finance-app"
+  },
+  "targets": {
+    "hisab-finance-app": {
+      "hosting": {
+        "research": ["hisab-research"]
+      }
+    }
+  }
+}
