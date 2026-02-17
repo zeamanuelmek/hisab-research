@@ -21,8 +21,8 @@ export function Step3Insights() {
 
         {/* Critical Finding */}
         {criticalFinding && (
-          <div className="mb-12 p-8 bg-gradient-to-r from-red-500/20 to-research-pink/20 border-2 border-red-500/50 rounded-2xl card-glow-pink">
-            <div className="flex items-start gap-4">
+          <div className="mb-12 p-4 sm:p-8 bg-gradient-to-r from-red-500/20 to-research-pink/20 border-2 border-red-500/50 rounded-2xl card-glow-pink">
+            <div className="flex flex-col sm:flex-row items-start gap-4">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 rounded-full bg-red-500 flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -30,16 +30,16 @@ export function Step3Insights() {
                   </svg>
                 </div>
               </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-3 text-red-300">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 text-red-300">
                   CRITICAL FINDING: {criticalFinding.title}
                 </h3>
-                <p className="text-lg text-research-gray-200 leading-relaxed mb-4">
+                <p className="text-base sm:text-lg text-research-gray-200 leading-relaxed mb-4">
                   {criticalFinding.description}
                 </p>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="text-sm text-research-gray-400">Sources:</span>
-                  <div className="flex gap-1">
+                  <div className="flex flex-wrap gap-1">
                     {criticalFinding.sources.map((source) => (
                       <span
                         key={source}

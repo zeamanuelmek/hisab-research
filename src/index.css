@@ -13,10 +13,12 @@
     @apply bg-research-bg text-research-gray-100 font-sans antialiased;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 }
 

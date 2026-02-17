@@ -126,14 +126,22 @@ export function Step4Themes() {
 
                 return (
                   <g key={idea.id}>
+                    {/* Invisible larger hit area for touch */}
                     <circle
                       cx={x}
                       cy={y}
-                      r={isSelected ? "12" : "8"}
+                      r="18"
+                      fill="transparent"
+                      className="cursor-pointer"
+                      onClick={() => setSelectedIdea(idea)}
+                    />
+                    <circle
+                      cx={x}
+                      cy={y}
+                      r={isSelected ? "13" : "10"}
                       fill={color}
                       opacity={isSelected ? "1" : "0.8"}
-                      className="hover:opacity-100 cursor-pointer transition-all"
-                      onClick={() => setSelectedIdea(idea)}
+                      className="hover:opacity-100 cursor-pointer transition-all pointer-events-none"
                       style={{
                         filter: isSelected ? 'drop-shadow(0 0 8px currentColor)' : 'none',
                       }}
@@ -158,19 +166,19 @@ export function Step4Themes() {
 
           {/* Selected Idea Detail */}
           {selectedIdea && (
-            <div className="bg-research-bg border-2 rounded-xl p-6 animate-fade-in relative"
+            <div className="bg-research-bg border-2 rounded-xl p-4 sm:p-6 animate-fade-in relative"
               style={{ borderColor: getIdeaColor(selectedIdea) }}
             >
               <button
                 onClick={() => setSelectedIdea(null)}
-                className="absolute top-4 right-4 text-research-gray-500 hover:text-research-gray-300"
+                className="absolute top-4 right-4 text-research-gray-500 hover:text-research-gray-300 w-8 h-8 flex items-center justify-center"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
 
-              <div className="flex items-start gap-4">
+              <div className="flex flex-col sm:flex-row items-start gap-4 pr-8">
                 <div
                   className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl flex-shrink-0"
                   style={{
@@ -183,13 +191,13 @@ export function Step4Themes() {
                    selectedIdea.category === 'time-sink' ? '⏳' : '💡'}
                 </div>
 
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h4 className="text-xl font-bold text-research-gray-100">
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <h4 className="text-lg sm:text-xl font-bold text-research-gray-100">
                       {selectedIdea.title}
                     </h4>
                     <span
-                      className="px-3 py-1 rounded-full text-xs font-bold uppercase"
+                      className="px-3 py-1 rounded-full text-xs font-bold uppercase whitespace-nowrap"
                       style={{
                         backgroundColor: `${getIdeaColor(selectedIdea)}20`,
                         color: getIdeaColor(selectedIdea),
@@ -203,14 +211,14 @@ export function Step4Themes() {
                     {selectedIdea.description}
                   </p>
 
-                  <div className="flex gap-6">
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                     <div>
                       <span className="text-xs text-research-gray-500">Impact:</span>
                       <div className="flex gap-1 mt-1">
                         {[1, 2, 3, 4, 5].map((i) => (
                           <div
                             key={i}
-                            className="w-6 h-6 rounded"
+                            className="w-8 h-6 sm:w-6 sm:h-6 rounded"
                             style={{
                               backgroundColor: i <= selectedIdea.impact ? getIdeaColor(selectedIdea) : '#2A2A35',
                             }}
@@ -225,7 +233,7 @@ export function Step4Themes() {
                         {[1, 2, 3, 4, 5].map((i) => (
                           <div
                             key={i}
-                            className="w-6 h-6 rounded"
+                            className="w-8 h-6 sm:w-6 sm:h-6 rounded"
                             style={{
                               backgroundColor: i <= selectedIdea.effort ? '#F59E0B' : '#2A2A35',
                             }}

@@ -14,10 +14,10 @@ export function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
         {/* Logo/Brand */}
         <div className="mb-8 animate-fade-in">
-          <h1 className="text-7xl md:text-8xl font-bold mb-4">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold mb-4">
             <span className="text-gradient-purple-pink">Hisab</span>
           </h1>
-          <p className="text-2xl md:text-3xl text-research-gray-300 font-light">
+          <p className="text-xl sm:text-2xl md:text-3xl text-research-gray-300 font-light">
             Ethiopia's First Freelancer Protection Platform
           </p>
         </div>
